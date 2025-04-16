@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import MyNavbar from './components/navbar.jsx';
 function App() {
   return (
     <div className="App">
-     <h1>hi from chayan </h1>
+     <MyNavbar />
     </div>
   );
 }
