@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import '../css/contactus.css'; // Create this CSS file
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
-
 const ContactUs = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -14,7 +13,7 @@ const ContactUs = () => {
         setStatus('Sending...');
         try {
             // Replace with your actual email sending endpoint
-            const response = await fetch('/api/send-email', {
+            const response = await fetch('https://formspree.io/f/xpwpvvqw', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -86,7 +85,9 @@ const ContactUs = () => {
                         <label htmlFor="message">Message</label>
                         <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} rows="5" required></textarea>
                     </div>
-                    <button type="submit" disabled={status === 'Sending...'}>{status || 'Send Message'}</button>
+                    <button type="submit" disabled={status.submitting}>Submit</button>
+                    {status && <p className="status-message">{status}</p>}
+
                 </motion.form>
             </motion.div>
         </section>

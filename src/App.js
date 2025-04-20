@@ -10,6 +10,7 @@ import Experience from './components/experience'; // Import the new Experience c
 import ContactUs from './components/contactus';
 import './App.css';
 import Certifications from './components/cerification';
+import Footer from './components/footer';
 
 function App() {
     return (
@@ -49,6 +50,9 @@ function App() {
 
             <Element name="contact" className="element">
                 <ContactUs />
+            </Element>
+            <Element name="footer" className="element">
+                <Footer />
             </Element>
 
         </div>

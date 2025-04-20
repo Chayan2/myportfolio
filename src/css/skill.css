@@ -30,7 +30,7 @@
   
   .skills-category h3 {
     font-size: 1.8rem;
-    color: #007bff;
+    color: #010202;
     margin-bottom: 20px;
   }
   
@@ -43,7 +43,7 @@
   
   .skill-item {
     background-color: #e0f7fa;
-    color: #00838f;
+    color: #175155;
     padding: 10px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -98,8 +98,8 @@
     }
   
     .skill-item {
-      font-size: 1rem;
-      padding: 12px 20px;
+      font-size: 0.9rem;
+      padding: 4px 9px;
       gap: 10px;
     }
   

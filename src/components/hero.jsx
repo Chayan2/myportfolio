@@ -4,6 +4,17 @@ import { ReactTyped } from 'react-typed';
 import '../css/hero.css';
 
 const Hero = () => {
+    const googleDriveResumeLink = 'https://drive.google.com/file/d/1q8sh91tZQBBDTjFadDtKdS09ZYKpqMOD/view?usp=sharing';
+
+    // Function to generate a direct download link for Google Drive
+    const getDirectDownloadLink = (driveUrl) => {
+        const parts = driveUrl.split('/');
+        const fileId = parts[parts.indexOf('d') + 1];
+        return `https://drive.google.com/uc?export=download&id=${fileId}`;
+    };
+
+    const directDownloadLink = getDirectDownloadLink(googleDriveResumeLink);
+
     return (
         <div className="hero" id="home">
             <motion.div
@@ -32,7 +43,8 @@ const Hero = () => {
                             "I'm a Full-Stack Developer",
                             "I'm a MERN Stack Engineer",
                             "I'm a Problem Solver",
-                            "I'm Chayan Jain",
+                            "I'm Node-js Devloper",
+                            "I'm React-js Devloper",
                         ]}
                         typeSpeed={50}
                         backSpeed={30}
@@ -58,9 +70,8 @@ const Hero = () => {
                         View Projects
                     </a>
                     <a
-                        href="/resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={directDownloadLink}
+                        download="Chayan_Jain_Resume.pdf" // Suggests a filename
                         className="btn secondary"
                     >
                         Download Resume

@@ -7,18 +7,18 @@ const certifications = [
         title: 'AWS Certified Cloud Practitioner',
         issuer: 'Amazon Web Services',
         date: 'Issued: Dec 2023',
-        link: 'https://www.credly.com/badges/your-aws-badge-id', // Replace with real Credly link
+        link: 'https://www.credly.com/users/chayan-jain-51', // Updated Credly link
     },
     {
         title: 'Cloud Digital Leader Certification',
         issuer: 'Google Cloud',
         date: 'Issued: Jul 2024',
-        link: 'https://www.credly.com/badges/your-google-cloud-badge-id', // Replace with real Credly link
+        link: 'https://www.credly.com/users/chayan-jain-51', // Updated Credly link
     },
     {
         title: 'ITIL V3 Exam Mentor Course',
         issuer: 'O\'Reilly Media',
-        link: 'https://www.credly.com/badges/your-itil-badge-id', // Replace with real Credly link
+        link: 'https://www.credly.com/users/chayan-jain-51', // Updated Credly link
     }
 ];
 

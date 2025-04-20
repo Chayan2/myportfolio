@@ -19,6 +19,15 @@
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+.status-message {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #28a745; /* Green for success */
+}
+
+.status-message:contains('Failed') {
+    color: #dc3545; /* Red for error */
+}
 
 .contact-info {
     display: flex;

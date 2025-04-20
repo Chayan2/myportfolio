@@ -11,8 +11,8 @@ const Projects = () => {
             description:
                 'A robust content management system built with the MERN stack, featuring secure authentication, rich-text editing, social sharing, and user engagement.',
             technologies: ['Node.js', 'React.js', 'Express.js', 'MongoDB', 'JWT', 'AWS'],
-            githubLink: 'YOUR_CONTENTIFY_GITHUB_LINK',
-            liveDemoLink: 'YOUR_CONTENTIFY_LIVE_DEMO_LINK',
+            githubLink: 'https://github.com/Chayan2/Contentify', // Updated GitHub link
+            liveDemoLink: 'YOUR_CONTENTIFY_LIVE_DEMO_LINK', // Add your live demo link here
             image: '/images/contentify-screenshot.png',
         },
         {
@@ -20,7 +20,8 @@ const Projects = () => {
             description:
                 'A user-friendly password generator crafted with React.js and styled with Tailwind CSS for responsiveness and a clean interface.',
             technologies: ['React.js', 'JavaScript', 'Tailwind CSS'],
-            githubLink: 'YOUR_PASSWORD_GENERATOR_GITHUB_LINK',
+            githubLink: 'https://github.com/Chayan2/Password-Genrator', // Updated GitHub link
+            liveDemoLink: 'YOUR_PASSWORD_GENERATOR_LIVE_DEMO_LINK', // Add your live demo link here
             image: '/images/password-generator-screenshot.png',
         },
         {
@@ -28,7 +29,8 @@ const Projects = () => {
             description:
                 'A URL shortening service developed using the MVC pattern with Express.js, EJS, and MongoDB, including user authentication.',
             technologies: ['Express.js', 'EJS', 'MongoDB', 'MVC'],
-            githubLink: 'YOUR_URL_SHORTENER_GITHUB_LINK',
+            githubLink: 'https://github.com/Chayan2/URL-Shortener', // Updated GitHub link
+            liveDemoLink: 'YOUR_URL_SHORTENER_LIVE_DEMO_LINK', // Add your live demo link here
             image: '/images/url-shortener-screenshot.png',
         },
     ];
@@ -49,7 +51,7 @@ const Projects = () => {
             <motion.div className="projects-grid-modern" variants={containerVariants} initial="hidden" animate="visible">
                 {projectsData.map((project, index) => (
                     <motion.div key={index} className="project-card-modern" variants={projectVariants}>
-                        {project.image && <div className="project-image"><img src={project.image} alt={project.title} /></div>}
+                        {/* {project.image && <div className="project-image"><img src={project.image} alt={project.title} /></div>} */}
                         <div className="project-info-modern">
                             <h3>{project.title}</h3>
                             <p>{project.description}</p>
@@ -79,3 +81,4 @@ const Projects = () => {
 };
 
 export default Projects;
+            
