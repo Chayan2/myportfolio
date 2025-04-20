@@ -1,0 +1,162 @@
+/* === Base Navbar Styles === */
+.custom-navbar {
+  background-color: #f8f9fa !important; /* Light background */
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.navbar-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* Primary color */
+  text-decoration: none;
+}
+
+.portfolio-animated {
+  display: inline-block;
+}
+
+/* === Toggler Button === */
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* === Navbar Collapse === */
+.navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+/* === Nav Links (Desktop) === */
+.nav-links {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #343a40;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* === Animated Underline === */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #007bff; /* Highlight color */
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* === Mobile Styles === */
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    display: block !important;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+
+  .navbar-nav {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link::after {
+    left: 0;
+    transform: none;
+  }
+}
+
+/* === Desktop Only (Optional Reset) === */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+
+.nav-link.active-link {
+  color: #0056b3 !important;
+  font-weight: bold;
+}
+
+.nav-link.active-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #0056b3;
+  transition: 0.4s ease;
+}

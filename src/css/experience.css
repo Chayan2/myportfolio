@@ -1,0 +1,233 @@
+/* experience.css (for modern-v3) */
+.experience.modern-v3 {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.timeline-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #ced4da;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.timeline-item.left {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.timeline-item.right {
+    left: 50%;
+    padding-left: 40px;
+}
+
+.timeline-content {
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.icon-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.timeline-item.left .icon-wrapper {
+    right: -15px;
+    left: auto;
+    transform: translateY(-50%);
+}
+
+.timeline-item.right .icon-wrapper {
+    left: -15px;
+    transform: translateY(-50%);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #343a40;
+}
+
+.timeline-content .company {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.timeline-content .date {
+    font-size: 0.9rem;
+    color: #adb5bd;
+    margin-bottom: 10px;
+}
+
+.timeline-content .toggle-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 5px 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    outline: none;
+}
+
+.timeline-content .details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.description-container {
+    direction: ltr; /* Left-to-right alignment */
+}
+
+.description-container.list .description-list-ltr {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.description-container.list .description-list-ltr li {
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.description-container.paragraph p {
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    white-space: pre-line; /* Preserve line breaks from the array */
+    text-align: left; /* Ensure text inside is also LTR */
+}
+
+.skill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #007bff;
+    flex-shrink: 0;
+    margin-right: 5px; /* Adjust icon position for LTR */
+}
+
+.timeline-content .tech-stack {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.format-toggle-button {
+    background: none;
+    border: 1px solid #007bff;
+    color: #007bff;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.format-toggle-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 15px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item.left .icon-wrapper,
+    .timeline-item.right .icon-wrapper {
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .timeline-item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .timeline-content {
+        margin-left: 30px;
+    }
+
+    .description-container.list .description-list-ltr li,
+    .description-container.paragraph p {
+        text-align: left; /* Ensure text inside is also LTR on mobile */
+    }
+
+    .description-container.list .description-list-ltr li {
+        flex-direction: row; /* Keep icon and text in a row on mobile */
+        align-items: flex-start;
+        margin-bottom: 10px;
+        gap: 8px;
+    }
+
+    .skill-icon {
+        margin-right: 8px; /* Adjust icon margin for LTR on mobile */
+        margin-left: 0;
+    }
+}
