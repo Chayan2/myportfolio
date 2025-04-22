@@ -10,9 +10,11 @@
   width: 100%;
 }
 
-.custom-navbar.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Add this to fix the issue */
+body {
+  padding-top: 76px; /* Adjust based on your navbar height */
 }
+
 
 /* === Container === */
 .navbar-container {
@@ -30,6 +32,11 @@
   font-weight: bold;
   color: #007bff;
   text-decoration: none;
+}
+
+.custom-navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Or your scrolled background */
 }
 
 .portfolio-animated {
@@ -69,6 +76,7 @@
   font-weight: 500;
   font-size: 1.3rem;
 }
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -153,14 +161,11 @@
   }
 }
 
-/* === Fix overlapping content due to fixed navbar === */
-body {
-  padding-top: 100px;
-}
+/* Profile Link  */
 .profile-link {
   display: flex;
   align-items: center;
-  margin-left: 20px; /* Add some spacing from the main links */
+  margin-left: 20px;
 }
 
 .profile-link-inner {

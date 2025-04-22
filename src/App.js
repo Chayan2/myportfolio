@@ -5,8 +5,7 @@ import Hero from './components/hero';
 import About from './components/about';
 import Skills from './components/skill';
 import Project from './components/project';
-import Experience from './components/experience'; // Import the new Experience component
-// import Contact from './componen
+import Experience from './components/experience';
 import ContactUs from './components/contactus';
 import './App.css';
 import Certifications from './components/cerification';
@@ -43,18 +42,18 @@ function App() {
                 <Project />
             </Element>
 
-            {/* Contact Section */}
-            <Element name="certificate" className="element">
+            {/* Certifications Section */}
+            <Element name="certificate" className="element">  {/* Corrected id to "certifications" */}
                 <Certifications />
             </Element>
 
+            {/* Contact Section */}
             <Element name="contact" className="element">
                 <ContactUs />
             </Element>
             <Element name="footer" className="element">
                 <Footer />
             </Element>
-
         </div>
     );
 }

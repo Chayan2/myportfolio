@@ -1,9 +1,10 @@
 .footer-modern-glow {
-    background-color: #0f1117;
-    padding: 40px 20px;
-    color: #cdd6f4;
+    /* Other existing styles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
   }
   
   .footer-container {

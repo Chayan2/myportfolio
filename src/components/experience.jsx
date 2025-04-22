@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FaCircle } from 'react-icons/fa';
 import '../css/experience.css';
+import hclLogo from '../hcl.jpg'; // Add logo in your project directory
 
 const experiences = [
   {
@@ -9,6 +10,7 @@ const experiences = [
     company: 'HCL Software',
     location: 'Noida, Uttar Pradesh',
     date: 'Jan 2023 - Present',
+    logo: hclLogo,
     descriptionType: 'list',
     description: [
       'Hands-on experience in Node.js, React.js, and MERN stack.',
@@ -51,9 +53,15 @@ const ExperienceTimeline = () => {
               <div className="icon-wrapper"><FaCircle size={10} /></div>
               <Card className="timeline-content">
                 <Card.Body>
-                  <Card.Title>{exp.title}</Card.Title>
-                  <div className="company">{exp.company} – {exp.location}</div>
-                  <div className="date">{exp.date}</div>
+                  <div className="logo-title-wrapper">
+                    {exp.logo && <img src={exp.logo} alt={`${exp.company} logo`} className="company-logo" />}
+                    <div>
+                      <Card.Title>{exp.title}</Card.Title>
+                      <div className="company">{exp.company} – {exp.location}</div>
+                      <div className="date">{exp.date}</div>
+                    </div>
+                  </div>
+
                   <Button
                     variant="link"
                     className="toggle-button"
@@ -61,6 +69,7 @@ const ExperienceTimeline = () => {
                   >
                     {expandedIndex === index ? 'Hide details' : 'Show details'}
                   </Button>
+
                   {expandedIndex === index && (
                     <div className={`description-container ${exp.descriptionType}`}>
                       {exp.descriptionType === 'list' ? (
@@ -77,6 +86,7 @@ const ExperienceTimeline = () => {
                       )}
                     </div>
                   )}
+
                   <div className="tech-stack"><strong>Tech Stack:</strong> {exp.techStack}</div>
                 </Card.Body>
               </Card>

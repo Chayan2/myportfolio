@@ -53,7 +53,8 @@ const ContactUs = () => {
 
     // Draw a polyline between the two locations if the user's location is different
     if (userLat !== yourLatitude || userLng !== yourLongitude) {
-      L.polyline([userLatLng, garhakotaLatLng], { color: 'blue' }).addTo(newMap);
+    //   L.polyline([userLatLng, garhakotaLatLng], { color: 'blue' }).addTo(newMap);
+      L.polygon([userLatLng, garhakotaLatLng], { color: 'red', fillOpacity: 0.1 }).addTo(newMap);
     }
 
     setMap(newMap);

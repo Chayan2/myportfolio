@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';  // Import react-scroll Link
 import '../css/navbar.css';
-import ProfileLink from './ProfileLink'; // Import the ProfileLink component
+import ProfileLink from './ProfileLink';
 
-const sections = ['home', 'projects', 'skills', 'about', 'contact'];
+const sections = ['home', 'about', 'experience', 'skills', 'projects', 'certificate', 'contact'];
 
 const MyNavbar = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -73,23 +74,32 @@ const MyNavbar = () => {
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">
                     <Nav className="navbar-center nav-links">
-                        {sections.map((item, index) => (
-                            <motion.div
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                key={index}
-                                style={{ display: 'inline-block' }}
-                            >
-                                <Nav.Link
-                                    href={`#${item}`}
-                                    className={`nav-link ${activeSection === item ? 'active-link' : ''}`}
+                        {sections.map((item, index) => {
+                            const sectionId = item;
+                            const sectionName = item.charAt(0).toUpperCase() + item.slice(1);
+
+                            return (
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    key={index}
+                                    style={{ display: 'inline-block' }}
                                 >
-                                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                                </Nav.Link>
-                            </motion.div>
-                        ))}
+                                    {/* Using Link component from react-scroll */}
+                                    <Link
+                                        to={sectionId}  // Targeting sections by their `name` prop
+                                        smooth={true}   // Smooth scrolling
+                                        offset={-70}    // Adjust for navbar height if needed
+                                        duration={500}  // Adjust scroll duration
+                                        className={`nav-link ${activeSection === sectionId ? 'active-link' : ''}`}
+                                    >
+                                        {sectionName}
+                                    </Link>
+                                </motion.div>
+                            );
+                        })}
                     </Nav>
-                    <Nav className="navbar-right"> {/* Added a navbar-right class */}
+                    <Nav className="navbar-right">
                         <ProfileLink />
                     </Nav>
                 </Navbar.Collapse>
